@@ -1,22 +1,24 @@
 import React,{ Component } from "react";
-import {Button,message} from "antd";
 import './App.css';
+import{BrowserRouter,Route,Switch} from 'react-router-dom'
+import Login from './pages/login/login'
+import Admin from './pages/admin/admin'
+import Page from './pages/page/page'
 /*
 应用的根组件
 */
  class App extends Component{
-  handleClick = ()=>{
-  message.success('点击正确');
-  }
+
 
   render(){
     return (
-      <div>
-    <Button type="primary" onClick={this.handleClick}>app</Button>
-    <a>this</a>
-      </div>
-
-    
+      <BrowserRouter>
+      <Switch>{/*只匹配其中的一个 */}
+      <Route path='/login' component={Login}></Route>
+      <Route path='/admin' component={Admin}></Route>
+      <Route path='/page' component={Page}></Route>
+      </Switch>
+      </BrowserRouter>
     )
   }
 }
