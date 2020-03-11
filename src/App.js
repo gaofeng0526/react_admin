@@ -14,8 +14,9 @@ import Page from './pages/page/page'
     return (
       <BrowserRouter>
       <Switch>{/*只匹配其中的一个 */}
+      <Route path='/admin' component={Admin} ></Route>
+      <Route path='/' component={Login}></Route>
       <Route path='/login' component={Login}></Route>
-      <Route path='/admin' component={Admin}></Route>
       <Route path='/page' component={Page}></Route>
       </Switch>
       </BrowserRouter>
