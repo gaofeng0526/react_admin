@@ -1,0 +1,51 @@
+const menuList =[
+  {
+    title:'首页',
+    key:'/admin',
+    icon:'home'
+  },{
+    title:'商品',
+    key:'/admin/products',
+    icon:'appstore',
+    children:[
+      {
+        title:'品类管理',
+        key:'/admin/category',
+        icon:'qrcode'
+      },
+      {
+        title:'商品管理',
+        key:'/admin/product',
+        icon:'menu'
+      }
+    ]
+  },
+  {
+    title:'用户管理',
+    key:'/admin/user',
+    icon:'user'
+  },
+  {
+    title:'角色管理',
+    key:'/admin/role',
+    icon:'solution'
+  },{
+    title:'订单管理',
+    key:'/admin/order',
+    icon:'table',
+    children:[
+      {
+        title:'未处理',
+        key:'/admin/unfinishi',
+        icon:'thunderbolt'
+      },
+      {
+        title:'所有订单',
+        key:'/admin/all',
+        icon:'carry-out'
+      }
+    ]
+  }
+]
+
+export default menuList
