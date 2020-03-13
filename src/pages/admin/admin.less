@@ -4,7 +4,7 @@
    align-items: center;
    height: 55px;
    margin: 16px;
-  
+
    img {
      width: 45px;
      height: 45px;
@@ -22,8 +22,55 @@
 
  //header
  .site-layout-sub-header-background {
-   margin: 16px;
-   background: #fff;
+    
+     background: #065279;
+    .welcome{
+      margin-left: 75%;
+      font-size: 16px;
+      color: #dfdfdf;
+      text-align: right;
+    }
+    .index_bar{
+      display: flex;
+      align-items: center;
+      height: 50px;
+      .index{
+        position: relative;
+        font-size: 20px;
+        text-align: center;
+        width: 200px;
+        margin-left: 30px;
+        color: #dfdfdf;
+
+        &::after{
+          content: '';
+          position: absolute;
+          right: 50%;
+          transform: translateX(50%);
+          top:81%;
+          border-top:20px solid #065279;
+          border-right:20px solid transparent;
+          border-bottom:20px solid transparent;
+          border-left:20px solid transparent;
+        }
+      }
+
+      .weather{
+        width: 500px;
+        font-size: 16px;
+        color: #dfdfdf;
+        margin-left:56%;
+        .time{
+          margin:0 15px;
+        }
+
+        .weather_day{
+          margin-left: 15px;
+        }
+      }
+    }
+
+
  }
 
  //content

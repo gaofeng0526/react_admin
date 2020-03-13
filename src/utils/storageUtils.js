@@ -17,7 +17,7 @@ export default {
     return store.get(USER_KEY) || {}
   },
   //删除user
-  removerUser() {
+  removeUser() {
   // localStorage.removeItem(USER_KEY)
   store.remove(USER_KEY)
   }
