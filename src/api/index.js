@@ -15,23 +15,27 @@ export const reqWeather = (city) =>{
   return new Promise((resolve,reject) => {
     const url = `http://wthrcdn.etouch.cn/weather_mini?city=${city}`
     jsonp(url,{},(err,data) => {
-      console.log('Jsonp()',data)
+      // console.log('Jsonp()',data)
       if(!err &&data.status ===1000){
         const {low,high} = data.data.forecast[0]
         const weather = data.data.forecast[0].type
         const lower = low.slice(3)
         const higher = high.slice(3)
         resolve({weather,lower,higher})
-       console.log(weather,lower,higher)
+      //  console.log(weather,lower,higher)
       }else{
         message.error('获取天气信息失败！')
       }
     })  
   })
-
 }
-reqWeather('郑州')
-// export const  = () => ajax()
+//获取一级/二级分类列表
+export const reqCategorys = (parentId) => ajax(BASE + '/api/category/list',{parentId})
+//添加分类
+export const reqAddCategory = (categoryName,parentId) => ajax(BASE + '/api/category/add',{categoryName,parentId},'POST')
+//更新分类
+export const reqUpdateCategory = ({categoryId,categoryName}) => ajax(BASE + '/api/category/update',{categoryId,categoryName},'POST')
+
 // export const  = () => ajax()
 // export const  = () => ajax()
 // export const  = () => ajax()

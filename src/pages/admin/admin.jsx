@@ -97,10 +97,11 @@ logOut = () => {
       return <Redirect to='/login' />
     }
     return (
-      <Layout style={{ height: '100%' }}>
+      <Layout style={{ height: '100%'}} >
+        
         <LeftNav></LeftNav>
+       
         <Layout>
-
           <Header className="site-layout-sub-header-background" >
             <p style={{ margin: -17, }}><span className="welcome">欢迎 , {user.username} &nbsp;&nbsp;&nbsp; <LinkButton onClick={this.logOut}>退出</LinkButton></span></p>
             <hr />
@@ -113,8 +114,12 @@ logOut = () => {
             </div>
           </Header>
 
-          <Content style={{ margin: '20px 16px' }}>
-            <div className="site-layout-background" style={{ padding: 24, minHeight: 600 }}>
+          <Content className="site-layout-background"style={{
+             margin: '20 0 0 0', 
+             paddingTop:24,
+              paddingLeft:16,
+              paddingRight:16,
+              minHeight: 580}}>
               <Switch>
                 <Route path='/admin/category' component={Category}></Route>
                 <Route path='/admin/product' component={Product}></Route>
@@ -126,13 +131,11 @@ logOut = () => {
                 <Route path='/admin' component={Home}></Route>
                 <Redirect to='/admin' />
               </Switch>
-
-            </div>
           </Content>
-          <Footer style={{ textAlign: 'center', padding: '0 0 0 0 ' }}>正版系统  侵权必究 ©2020 Created by 高应许</Footer>
+
+          <Footer className='footer' style={{ textAlign: 'center', padding: '0 0 0 0 ' }}>正版系统  侵权必究 ©2020 Created by 高应许</Footer>
         </Layout>
       </Layout>
-      // {/* Hello {user.username} */}
     )
   }
 }
