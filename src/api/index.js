@@ -35,11 +35,15 @@ export const reqCategorys = (parentId) => ajax(BASE + '/api/category/list',{pare
 export const reqAddCategory = (categoryName,parentId) => ajax(BASE + '/api/category/add',{categoryName,parentId},'POST')
 //更新分类
 export const reqUpdateCategory = ({categoryId,categoryName}) => ajax(BASE + '/api/category/update',{categoryId,categoryName},'POST')
+//获取一个分类
+export const reqCategory = (categoryId) => ajax(BASE + '/api/category/info',{categoryId})
 
-// export const  = () => ajax()
-// export const  = () => ajax()
-// export const  = () => ajax()
-// export const  = () => ajax()
+//获取商品分页列表
+export const reqProducts = (pageNum,pageSize) => ajax(BASE + '/api/product/list',{pageNum,pageSize})
+//搜索商品分页列表(根据名称/根据描述)
+export const reqSearchProducts = ({pageNum,pageSize,searchName,searchType}) => ajax(BASE + '/api/product/search',{pageNum,pageSize,[searchType]:searchName})
+//控制商品上下架
+export const reqUpdateStatus = (productId,status) => ajax(BASE + '/api/product/updateStatus',{productId,status},'POST')
 // export const  = () => ajax()
 // export const  = () => ajax()
 // export const  = () => ajax()
