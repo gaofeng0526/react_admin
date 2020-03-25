@@ -76,7 +76,9 @@ class ProductHome extends Component {
               <LinkButton
                 onClick={() => this.props.history.push('/admin/product/detail', product)}
               >详情</LinkButton>
-              <LinkButton>修改</LinkButton>
+              <LinkButton 
+              onClick = {() => this.props.history.push('/admin/product/addupdate',product)}
+              >修改</LinkButton>
             </span>
           )
         }
@@ -88,7 +90,6 @@ class ProductHome extends Component {
     this.pageNum = pageNum
     this.setState({ loading: true })
     const { searchName, searchType } = this.state
-    // console.log(pageNum)
     let result
     if (searchName) {
       result = (await reqSearchProducts({ pageNum, pageSize: PAGE_SIZE, searchName, searchType })).data
@@ -106,14 +107,11 @@ class ProductHome extends Component {
   }
   //更新指定商品的状态
   updateStatus = async (productId, status) => {
-    // console.log(productId)
-    // console.log(status)
     const result = await reqUpdateStatus(productId, status)
     // console.log(result)
     if (result.data.status === 0) {
       message.success('更新商品成功')
       this.getProducts(this.pageNum)
-      // console.log(this.pageNum)
     }
   }
 
@@ -146,8 +144,7 @@ class ProductHome extends Component {
       </span>
     )
     const extra = (
-
-      <Button type="primary">
+      <Button type="primary" onClick = {() => this.props.history.push('/admin/product/addupdate')}>
         <Icon type="plus"></Icon>
       添加商品
       </Button>

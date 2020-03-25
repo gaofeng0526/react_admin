@@ -53,7 +53,7 @@ getMenuNode = (menuList) => {
           </Menu.Item>
       ))
     }else{
-      const cItem = item.children.find(cItem => cItem.key=== path)
+      const cItem = item.children.find(cItem => path.indexOf(cItem.key)=== 0)
       if(cItem){
         this.openKey = item.key
       } 
@@ -80,7 +80,11 @@ componentWillMount(){
 }
   render() {
     
-    const path = this.props.location.pathname
+    let path = this.props.location.pathname
+    // console.log(path)
+    if(path.indexOf('/admin/product') === 0){
+      path = '/admin/product'
+    }
     const openKey = this.openKey
     return (
       <Sider

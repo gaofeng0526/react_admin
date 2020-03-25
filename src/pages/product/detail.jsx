@@ -5,7 +5,7 @@ import {
   Icon,
   List
 } from 'antd'
-import { BASE_IMG_URL } from '../../utils/constants'
+// import { BASE_IMG_URL } from '../../utils/constants'
 import { reqCategory } from '../../api'
 const Item = List.Item
 class ProductDetail extends Component {
@@ -42,7 +42,7 @@ class ProductDetail extends Component {
   render() {
     const { name, desc, price, imgs } = this.props.location.state
     const { cName1, cName2 } = this.state
-    // console.log(this.props.location.state)
+    // console.log( imgs.map(img => (BASE_IMG_URL + img)))
     const title = (
       <span>
         <LinkButton>
@@ -80,19 +80,18 @@ class ProductDetail extends Component {
             <span className="right">{cName1}{cName2 ? '-->' + cName2 : ''}</span>
           </Item>
           <Item style={{ justifyContent: "initial" }}>
-            <span className="left">商品分类:</span>
+            <span className="left">商品图片:</span>
             <span>
               {
                 imgs.map(img => (
                   <img
                     key={img}
                     className='product-img'
-                    src={BASE_IMG_URL + img}
+                    src=''
                     alt="img" />
                 ))
               }
             </span>
-
           </Item>
         </List>
       </Card>

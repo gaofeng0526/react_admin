@@ -44,10 +44,16 @@ export const reqProducts = (pageNum,pageSize) => ajax(BASE + '/api/product/list'
 export const reqSearchProducts = ({pageNum,pageSize,searchName,searchType}) => ajax(BASE + '/api/product/search',{pageNum,pageSize,[searchType]:searchName})
 //控制商品上下架
 export const reqUpdateStatus = (productId,status) => ajax(BASE + '/api/product/updateStatus',{productId,status},'POST')
-// export const  = () => ajax()
-// export const  = () => ajax()
-// export const  = () => ajax()
-// export const  = () => ajax()
+//控制删除图片
+export const reqDeleteImg = (name) => ajax(BASE + '/api/img/delete',{name},'POST')
+//更新商品/添加商品
+export const reqAddOrUpdateProduct = (product) => ajax(BASE + '/api/product/' + (product._id ?'update':'add'),product,'POST')
+//获取角色的列表
+export const reqRoles = () => ajax(BASE + '/api/role/list')
+//添加角色
+export const reqAddRole = (name) => ajax(BASE + '/api/role/add',{name},'POST')
+//更新角色
+export const reqUpdateRole = (role) => ajax(BASE + '/api/role/update',role,'POST')
 // export const  = () => ajax()
 // export const  = () => ajax()
 // export const  = () => ajax()
