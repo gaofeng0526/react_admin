@@ -8,8 +8,11 @@ const BASE = ''
 //登录接口
 export const reqLogin = (username,password)=> ajax(BASE + '/api/login',{username,password},'POST')
 //添加用户
-export const reqAddUser = (user) => ajax(BASE + '/manage/user/add',user,'POST')
-
+export const reqAddOrUpdateUser = (user) => ajax(BASE + '/api/user/' + (user._id ? 'update':'add'),user,'POST')
+// 获取用户列表
+export const reqUsers = () => ajax (BASE + '/api/user/all')
+//删除用户
+export const reqDeleteUser =(userId) => ajax(BASE + '/api/user/delete',{userId},'POST')
 //请求天气的jsonp请求
 export const reqWeather = (city) =>{
   return new Promise((resolve,reject) => {

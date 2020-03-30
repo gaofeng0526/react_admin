@@ -11,13 +11,13 @@ import './admin.less'
 import LeftNav from './left-nav/index';
 import LinkButton from '../../components/link-button/index'
 
-import Home from '../home/home'
-import Category from '../category/category'
-import Product from '../product/product'
-import User from '../user/user'
-import Role from '../role/role'
-import UnFinish from '../order/unfinish'
-import All from '../order/all'
+  import Home from '../home/home'
+  import Category from '../category/category'
+  import Product from '../product/product'
+  import User from '../user/user'
+  import Role from '../role/role'
+  import UnFinish from '../order/unfinish'
+  import All from '../order/all'
 import menuList from '../../config/menuConfig';
 
 const { Footer, Content, Header } = Layout;
@@ -98,9 +98,7 @@ logOut = () => {
     }
     return (
       <Layout style={{ height: '100%'}} >
-        
         <LeftNav></LeftNav>
-       
         <Layout>
           <Header className="site-layout-sub-header-background" >
             <p style={{ margin: -17, }}><span className="welcome">欢迎 , {user.username} &nbsp;&nbsp;&nbsp; <LinkButton onClick={this.logOut}>退出</LinkButton></span></p>

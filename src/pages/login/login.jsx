@@ -33,10 +33,9 @@ class Login extends Component {
         if (result.status===0) { // 登陆成功
           // 提示登陆成功
           message.success('登陆成功')
-
           // 保存user
-          const user = result.user
-
+          const user = result.data
+          // console.log(user)
           memoryUtils.user = user // 保存在内存中
           storageUtils.saveUser(user) // 保存到local中
 
@@ -126,7 +125,7 @@ class Login extends Component {
                     { max: 12, message: '用户名最多12位' },
                     { pattern: /^[a-zA-Z0-9_]+$/, message: '用户名必须是英文、数字或下划线组成' },
                   ],
-                  initialValue: 'admin', // 初始值
+                  initialValue: '', // 初始值
                 })(
                   <Input
                     prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}

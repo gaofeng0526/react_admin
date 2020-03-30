@@ -17,7 +17,7 @@ import {formateDate} from '../../utils/dateUtils'
 class Role extends Component {
 
   state = {
-    roles: [],//所有觉得的列表
+    roles: [],//所有角色的列表
     role: {},//选中的role
     isShowAdd: false,
     isShowAuth: false
